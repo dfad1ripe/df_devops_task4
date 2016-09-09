@@ -1,4 +1,4 @@
-ISO/*
+ISO/*.iso
 output-virtualbox-iso/*
 packer-cache/*
 *.box
