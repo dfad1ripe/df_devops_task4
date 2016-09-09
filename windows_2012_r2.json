@@ -2,7 +2,7 @@
     "builders": [{
     "type": "virtualbox-iso",
     "vboxmanage": [
-      [ "modifyvm", "{{.Name}}", "--natpf1", "winrm,tcp,,55985,,5985" ],
+      [ "modifyvm", "{{.Name}}", "--natpf1", "winrm,tcp,,5985,,5985" ],
       [ "modifyvm", "{{.Name}}", "--memory", "2048" ],
       [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
     ],
@@ -14,10 +14,10 @@
     "communicator": "winrm",
     "winrm_username": "vagrant",
     "winrm_password": "vagrant",
-    "winrm_port": "55985",
+    "winrm_port": "5985",
     "winrm_timeout": "5h",
     "guest_additions_mode": "disable",
-    "shutdown_command": "C:/windows/system32/sysprep/sysprep.exe /generalize /oobe /unattend:C:/Windows/Panther/Unattend/unattend.xml /quiet /shutdown",
+    "shutdown_command": "C:/Windows/system32/sysprep/sysprep.exe /generalize /oobe /shutdown",
     "shutdown_timeout": "15m",
     "floppy_files": [
       "answer_files/2012/AutoUnattend.xml",
@@ -28,7 +28,7 @@
     {
       "type": "vagrant",
       "keep_input_artifact": true,
-      "output": "windows2008r2-{{.Provider}}.box",
+      "output": "windows2012r2-{{.Provider}}.box",
       "vagrantfile_template": "vagrantfile-windows_2012_r2.template"
     }
   ]

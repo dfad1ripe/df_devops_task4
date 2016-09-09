@@ -1,3 +1,4 @@
 ISO/*
 output-virtualbox-iso/*
 packer-cache/*
+*.box
