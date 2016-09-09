@@ -17,13 +17,22 @@
     "winrm_port": "5985",
     "winrm_timeout": "5h",
     "guest_additions_mode": "disable",
-    "shutdown_command": "C:/Windows/system32/sysprep/sysprep.exe /generalize /oobe /shutdown",
+    "shutdown_command": "A:/shutdown.bat",
     "shutdown_timeout": "15m",
     "floppy_files": [
       "answer_files/2012/AutoUnattend.xml",
-      "scripts/winrm.ps1"
+      "scripts/postunattend.xml",
+      "scripts/winrm.ps1",
+      "scripts/SetupComplete.cmd",
+      "scripts/shutdown.bat"
     ]
   }],
+  "provisioners": [
+    {
+      "type": "powershell",
+      "script": "scripts/provision.ps1"
+    }
+  ],
     "post-processors": [
     {
       "type": "vagrant",
