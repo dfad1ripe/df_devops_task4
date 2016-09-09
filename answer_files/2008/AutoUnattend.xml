@@ -1,0 +1,26 @@
+<UserAccounts>
+  <AdministratorPassword>
+    <Value>vagrant</Value>
+    <PlainText>true</PlainText>
+  </AdministratorPassword>
+  <LocalAccounts>
+      <LocalAccount wcm:action="add">
+        <Password>
+          <Value>vagrant</Value>
+          <PlainText>true</PlainText>
+        </Password>
+        <Group>administrators</Group>
+        <DisplayName>Vagrant</DisplayName>
+        <Name>vagrant</Name>
+        <Description>Vagrant User</Description>
+      </LocalAccount>
+    </LocalAccounts>
+</UserAccounts>
+<AutoLogon>
+  <Password>
+    <Value>vagrant</Value>
+    <PlainText>true</PlainText>
+  </Password>
+  <Enabled>true</Enabled>
+  <Username>vagrant</Username>
+</AutoLogon>
