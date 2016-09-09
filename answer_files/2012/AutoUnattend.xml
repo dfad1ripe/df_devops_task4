@@ -135,12 +135,6 @@
         <Username>vagrant</Username>
       </AutoLogon>
       <FirstLogonCommands>
-        <!--
-        <SynchronousCommand wcm:action="add">
-           <CommandLine>cmd.exe /c C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\2012_boxstarter.ps1</CommandLine>
-           <Order>1</Order>
-        </SynchronousCommand>
-        -->
         <SynchronousCommand wcm:action="add">
           <CommandLine>cmd.exe /c powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force"</CommandLine>
           <Description>Set Execution Policy 64 Bit</Description>
@@ -153,10 +147,19 @@
           <Order>2</Order>
           <RequiresUserInput>true</RequiresUserInput>
         </SynchronousCommand>
+        <!-- WITH WINDOWS UPDATES -->
+        <!--
+        <SynchronousCommand wcm:action="add">
+           <CommandLine>cmd.exe /c a:\microsoft-updates.bat</CommandLine>
+           <Order>3</Order>
+           <Description>Enable Microsoft Updates</Description>
+        </SynchronousCommand>
+        -->
+        <!-- END WITH WINDOWS UPDATES -->
         <SynchronousCommand wcm:action="add">
           <CommandLine>C:\Windows\SysWOW64\cmd.exe /c powershell -Command . A:\winrm.ps1</CommandLine>
           <Description>WinRM Configuration</Description>
-          <Order>3</Order>
+          <Order>5</Order>
           <RequiresUserInput>true</RequiresUserInput>
         </SynchronousCommand>
       </FirstLogonCommands>
