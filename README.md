@@ -12,7 +12,7 @@ This project generates a box for vagrant in one of the following configurations:
 * Windows **2012**r2, MSDN image with actual updates
 
 
-Instructions:
+## Instructions: ##
 
 1. Place MSDN ISO image of corresponding OS to ISO directory.
 
@@ -34,4 +34,54 @@ The build without updates takes 15-30 min on average workstation. With updates, 
 
 Once the build completes, you will a file with .box extension in the current directory, this is vagrant box
 for the OS of your choice.
-  
+
+
+## Q & A: ##
+
+**Q:** What is packer?
+
+**A:** A tool that prepares boxes for Chef & Co. 
+
+**Q:** Why you can’t download windows boxes from the Internet?
+
+**A:** Because MS missed to release GPL versions of Windows again...  
+
+**Q:** What is used for preparing box by packer?
+
+**A:** ISO image of OS distributive, a set of configuration files and scenarios, and any supported hypervisor.  
+
+**Q:** How are you installing guest OS by packer?
+
+**A:** Packer creates VM in one of supported and installed hypervisors, boots VM and uses both native OS
+mechanisms for initial setup and configuration, and a communicator (SSH, WinRM) to run tasks on live system.  
+
+**Q:** What is difference between Win2008r2 & 2012r2 in terms of boxes creation process?
+
+**A:** WinRM is not available out-of-the-box in 2008.
+
+**Q:** Time for preparing Win2008r2 box with updates?
+
+**Q:** -Time for preparing Win2008r2 box without updates?
+
+**Q:**-Time for preparing Win2012r2 box with updates?
+
+**Q:**Time for preparing Win2012r2 box without updates?
+
+**A:** 18-20 min
+
+**Q:** What license model you have to use for that boxes?
+
+**A:** Same as for original OS. 
+
+
+## External issues that I had to consider ##
+
+https://github.com/mitchellh/packer/issues/2401
+
+## Disclaimer ##
+
+Used some materials from:
+http://www.hurryupandwait.io/blog/creating-windows-base-images-for-virtualbox-and-hyper-v-using-packer-boxstarter-and-vagrant
+
+WUA_SearchDownloadInstall.vbs script as provided by Microsoft:
+https://msdn.microsoft.com/en-us/library/aa387102%28VS.85%29.aspx

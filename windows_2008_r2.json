@@ -16,7 +16,7 @@
     "winrm_port": "55985",
     "winrm_timeout": "5h",
     "guest_additions_mode": "disable",
-    "shutdown_command": "C:/windows/system32/sysprep/sysprep.exe /generalize /oobe /unattend:C:/Windows/Panther/Unattend/unattend.xml /quiet /shutdown",
+    "shutdown_command": "C:/Windows/system32/sysprep/sysprep.exe /generalize /oobe /unattend:C:/Windows/Panther/unattend.xml /quiet /shutdown",
     "shutdown_timeout": "15m",
     "floppy_files": [
       "answer_files/2008/AutoUnattend.xml",

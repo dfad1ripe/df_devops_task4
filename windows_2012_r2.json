@@ -18,13 +18,15 @@
     "winrm_timeout": "5h",
     "guest_additions_mode": "disable",
     "shutdown_command": "A:/shutdown.bat",
-    "shutdown_timeout": "15m",
+    "shutdown_timeout": "30m",
     "floppy_files": [
       "answer_files/2012/AutoUnattend.xml",
       "scripts/postunattend.xml",
       "scripts/winrm.ps1",
       "scripts/SetupComplete.cmd",
-      "scripts/shutdown.bat"
+      "scripts/shutdown.bat",
+      "scripts/microsoft-updates.bat",
+      "scripts/WUA_SearchDownloadInstall.vbs"
     ]
   }],
   "provisioners": [
