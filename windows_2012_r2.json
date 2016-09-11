@@ -17,14 +17,14 @@
     "winrm_port": "5985",
     "winrm_timeout": "5h",
     "guest_additions_mode": "disable",
-    "shutdown_command": "A:/shutdown.bat",
+    "shutdown_command": "A:/shutdown.cmd",
     "shutdown_timeout": "30m",
     "floppy_files": [
       "answer_files/2012/AutoUnattend.xml",
       "scripts/postunattend.xml",
       "scripts/winrm.ps1",
       "scripts/SetupComplete.cmd",
-      "scripts/shutdown.bat",
+      "scripts/shutdown.cmd",
       "scripts/microsoft-updates.bat",
       "scripts/WUA_SearchDownloadInstall.vbs"
     ]

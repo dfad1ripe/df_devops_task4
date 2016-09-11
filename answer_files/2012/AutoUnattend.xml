@@ -148,13 +148,13 @@
           <RequiresUserInput>true</RequiresUserInput>
         </SynchronousCommand>
         <!-- WITH WINDOWS UPDATES -->
-        <!---->
+        <!--
         <SynchronousCommand wcm:action="add">
            <CommandLine>cmd.exe /c a:\microsoft-updates.bat</CommandLine>
            <Order>3</Order>
            <Description>Enable and install Microsoft Updates</Description>
         </SynchronousCommand>
-        <!---->
+        -->
         <!-- END WITH WINDOWS UPDATES -->
         <SynchronousCommand wcm:action="add">
           <CommandLine>C:\Windows\SysWOW64\cmd.exe /c powershell -Command . A:\winrm.ps1</CommandLine>
