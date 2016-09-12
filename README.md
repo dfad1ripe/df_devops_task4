@@ -16,8 +16,8 @@ This project generates a box for vagrant in one of the following configurations:
 
 1. Place MSDN ISO image of corresponding OS to ISO directory.
 
-2. Ensure that the filename and MD5 checksum of ISO image are specified properly in `windows_2008_r2.json`
-(if you install Windows 2008r2) or `windows_2012_r2.json` (if you install Windows 2012r2). Correct the
+2. Ensure that the filename and MD5 checksum of ISO image are specified properly in `windows_2008_r2*.json`
+(if you install Windows 2008r2) or `windows_2012_r2*.json` (if you install Windows 2012r2). Correct the
 filename and checksum if necessary. You can use `md5sum <filename>` to generate a checksum.
 
 3. Depending on OS that you need to use, run the following command:
@@ -29,7 +29,7 @@ filename and checksum if necessary. You can use `md5sum <filename>` to generate 
   * To install Windows 2012r2 with updates, run `packer build windows_2012_r2_updated.json`
 
 
-The build without updates takes 15-30 min on average workstation. With updates, prepare to wait for 1-3 hours.
+The build without updates takes 15-30 min on average workstation. With updates, prepare to wait for a hour or more.
 
 Once the build completes, you will a file with .box extension in the current directory, this is vagrant box
 for the OS of your choice.
