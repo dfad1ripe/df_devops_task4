@@ -1,0 +1,1 @@
+netsh advfirewall firewall set rule name="In 5985" new action=allow

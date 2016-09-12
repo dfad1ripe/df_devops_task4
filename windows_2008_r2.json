@@ -2,7 +2,7 @@
     "builders": [{
     "type": "virtualbox-iso",
     "vboxmanage": [
-      [ "modifyvm", "{{.Name}}", "--natpf1", "winrm,tcp,,55985,,5985" ],
+      [ "modifyvm", "{{.Name}}", "--natpf1", "winrm,tcp,,5985,,5985" ],
       [ "modifyvm", "{{.Name}}", "--memory", "2048" ],
       [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
     ],
@@ -13,23 +13,30 @@
     "communicator": "winrm",
     "winrm_username": "vagrant",
     "winrm_password": "vagrant",
-    "winrm_port": "55985",
+    "winrm_port": "5985",
     "winrm_timeout": "5h",
     "guest_additions_mode": "disable",
-    "shutdown_command": "C:/Windows/system32/sysprep/sysprep.exe /generalize /oobe /unattend:C:/Windows/Panther/unattend.xml /quiet /shutdown",
-    "shutdown_timeout": "15m",
+    "shutdown_command": "A:/shutdown.cmd",
+    "shutdown_timeout": "30m",
     "floppy_files": [
       "answer_files/2008/AutoUnattend.xml",
-      "scripts/postunattend.xml",
-      "scripts/boxstarter.ps1",
-      "scripts/package.ps1"
+      "scripts/2008/postunattend.xml",
+      "scripts/2008/winrm.ps1",
+      "scripts/2008/SetupComplete.cmd",
+      "scripts/2008/shutdown.cmd"
     ]
   }],
+  "provisioners": [
+    {
+      "type": "powershell",
+      "script": "scripts/2008/provision.ps1"
+    }
+  ],
     "post-processors": [
     {
       "type": "vagrant",
       "keep_input_artifact": true,
-      "output": "windows2008r2-{{.Provider}}.box",
+      "output": "w2008r2.box",
       "vagrantfile_template": "vagrantfile-windows_2008_r2.template"
     }
   ]
