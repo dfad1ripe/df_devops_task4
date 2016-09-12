@@ -20,24 +20,26 @@
     "shutdown_command": "A:/shutdown.cmd",
     "shutdown_timeout": "30m",
     "floppy_files": [
-      "answer_files/2012/AutoUnattend.xml",
-      "scripts/2012/postunattend.xml",
-      "scripts/2012/winrm.ps1",
-      "scripts/2012/SetupComplete.cmd",
-      "scripts/2012/shutdown.cmd"
+      "answer_files/2012_upd/AutoUnattend.xml",
+      "scripts/2012_upd/postunattend.xml",
+      "scripts/2012_upd/winrm.ps1",
+      "scripts/2012_upd/SetupComplete.cmd",
+      "scripts/2012_upd/shutdown.cmd",
+      "scripts/2012_upd/microsoft-updates.bat",
+      "scripts/2012_upd/WUA_SearchDownloadInstall.vbs"
     ]
   }],
   "provisioners": [
     {
       "type": "powershell",
-      "script": "scripts/2012/provision.ps1"
+      "script": "scripts/2012_upd/provision.ps1"
     }
   ],
     "post-processors": [
     {
       "type": "vagrant",
       "keep_input_artifact": true,
-      "output": "w2012r2.box",
+      "output": "w2012r2-upd.box",
       "vagrantfile_template": "vagrantfile-windows_2012_r2.template"
     }
   ]
