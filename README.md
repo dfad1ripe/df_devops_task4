@@ -67,6 +67,8 @@ minor difference when enabling WinRM.
 
 **Q:** Time for preparing Win2008r2 box with updates?
 
+**A:** 140 min
+
 **Q:** Time for preparing Win2008r2 box without updates?
 
 **A:** 18-20 min
