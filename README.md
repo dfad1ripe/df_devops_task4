@@ -22,17 +22,23 @@ filename and checksum if necessary. You can use `md5sum <filename>` to generate 
 
 3. Depending on OS that you need to use, run the following command:
 
-  * To install Windows 2008r2, **To Do**
+  * To install Windows 2008r2 without updates, run `packer build windows_2008_r2.json`
+
+  * To install Windows 2008r2 with updates, run `packer build windows_2008_r2_updated.json`
 
   * To install Windows 2012r2 without updates, run `packer build windows_2012_r2.json`
 
   * To install Windows 2012r2 with updates, run `packer build windows_2012_r2_updated.json`
 
 
-The build without updates takes 15-30 min on average workstation. With updates, prepare to wait for a hour or more.
+The build without updates takes 15-30 min on average workstation. With updates, prepare to wait
+for a hour or more in case of Windows 2012, and 2-4 hours if you are building a bow with
+Windows 2008.
 
-Once the build completes, you will a file with .box extension in the current directory, this is vagrant box
-for the OS of your choice.
+Once the build completes, you will find a file with .box extension in the current directory,
+this is vagrant box for the OS of your choice.
+
+A box can then be installed using a syntax like `vagrant box add Windows2008r2 w2008r2.box`.
 
 
 ## Q & A: ##
@@ -41,7 +47,7 @@ for the OS of your choice.
 
 **A:** A tool that prepares boxes for Chef & Co. 
 
-**Q:** Why you can’t download windows boxes from the Internet?
+**Q:** Why you can't download windows boxes from the Internet?
 
 **A:** Because MS missed to release GPL versions of Windows again...
 
@@ -56,17 +62,20 @@ mechanisms for initial setup and configuration, and a communicator (SSH, WinRM) 
 
 **Q:** What is difference between Win2008r2 & 2012r2 in terms of boxes creation process?
 
-**A:** WinRM is not available out-of-the-box in 2008.
+**A:** A number of existing OS updates, causing significant larger build time in case of 2008. Also,
+minor difference when enabling WinRM.
 
 **Q:** Time for preparing Win2008r2 box with updates?
 
-**Q:** -Time for preparing Win2008r2 box without updates?
+**Q:** Time for preparing Win2008r2 box without updates?
 
-**Q:**-Time for preparing Win2012r2 box with updates?
+**A:** 18-20 min
+
+**Q:** Time for preparing Win2012r2 box with updates?
 
 **A:** 45-50 min
 
-**Q:**Time for preparing Win2012r2 box without updates?
+**Q:** Time for preparing Win2012r2 box without updates?
 
 **A:** 20-25 min
 
